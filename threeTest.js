@@ -7,7 +7,7 @@ document.getElementById( 'threewrapper' ).appendChild( renderer.domElement );
 
 var geometry = new THREE.OctahedronGeometry( 1, 0 );
 var material = new THREE.MeshPhongMaterial( {
-					color: 0x660033,
+					color: ox00ff00,
 					emissive: 0x072534,
 					side: THREE.DoubleSide,
 					shading: THREE.FlatShading
