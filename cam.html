@@ -1,0 +1,32 @@
+<html>
+<head>
+</head>
+<body>
+	<button>
+	Click for Camera
+	</button>
+	<script type='text/javascript'>
+		var button = document.querySelector( 'button' );
+
+		button.onclick = function(){
+
+			try{
+				if( navigator.camera ){
+					navigator.camera.getPicture( function(){
+						alert( 'picture taken' );
+					},
+					function(){
+						alert( 'error' );
+					});
+				}
+				else{
+					alert( "can't access the camera" );
+				}
+			}
+			catch( e ){
+				alert( e );
+			}
+		}
+	</script>
+</body>
+</html>
