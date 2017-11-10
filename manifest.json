@@ -1,0 +1,13 @@
+{
+  "short_name": "Jbeers",
+  "name": "Jacob Beers GitHub Page",
+  "icons": [
+    {
+      "src": "https://avatars2.githubusercontent.com/u/2421336?s=40&v=4",
+      "type": "image/png",
+      "sizes": "48x48"
+    }
+  ],
+  "start_url": "index.html?launcher=true",
+  "display": "standalone"
+}
