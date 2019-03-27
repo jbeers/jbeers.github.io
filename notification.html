@@ -3,15 +3,26 @@
 <head>
 </head>
 <body>
-
+	<button id="updateBtn">update service worker</button>
 	<script>
 		(async function(){
+			const btn = document.querySelector( '#updateBtn' );
+			let registration = '';
+
+			btn.addEventListener( 'click', () => {
+				if( !registration ){
+					alert( 'no good!' );
+					return;
+				}
+
+				registration.update();
+			});
+
 			const permission = await Notification.requestPermission();
-			debugger;
 			if('serviceWorker' in navigator) {
 			  navigator.serviceWorker
 			           .register('/sw.js')
-			           .then(function() { console.log("Service Worker Registered"); });
+			           .then(function( registration ) { registration = registration });
 			}
 		})();
 		
