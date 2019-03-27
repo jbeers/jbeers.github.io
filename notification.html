@@ -1,0 +1,20 @@
+<!DOCTYPE>
+<html>
+<head>
+</head>
+<body>
+
+	<script>
+		(async function(){
+			const permission = await Notification.requestPermission();
+			debugger;
+			if('serviceWorker' in navigator) {
+			  navigator.serviceWorker
+			           .register('/sw.js')
+			           .then(function() { console.log("Service Worker Registered"); });
+			}
+		})();
+		
+	</script>
+</body>
+</html>
