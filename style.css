@@ -161,3 +161,11 @@ img {
   background: var(--accent);
   color: var(--on-primary);
 }
+
+ol li {
+  margin-bottom: 10px;
+}
+
+ul li {
+  margin-bottom: 10px;
+}

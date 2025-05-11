@@ -22,7 +22,7 @@
   <main>
     <div class="article-meta">
       <span><b>Title:</b> {{ title }}</span><br>
-      <span><b>Date:</b> {{ date }}</span><br>
+      <span><b>Date:</b> {{ date | date: "yyyy-MM-dd" }}</span><br>
       {%- if author %}<span><b>Author:</b> {{ author }}</span><br>{% endif -%}
       {%- if description %}<span><b>Description:</b> {{ description }}</span>{% endif -%}
     </div>

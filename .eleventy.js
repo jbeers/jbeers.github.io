@@ -1,4 +1,5 @@
 module.exports = function(eleventyConfig) {
+  
   // Copy style.css to the output folder
   eleventyConfig.addPassthroughCopy("style.css");
 
@@ -11,7 +12,7 @@ module.exports = function(eleventyConfig) {
   });
 
   // Add a simple Nunjucks date filter
-  eleventyConfig.addNunjucksFilter("date", function(dateObj, format) {
+  eleventyConfig.addFilter("date", function(dateObj, format) {
     const pad = n => n < 10 ? '0' + n : n;
     const year = dateObj.getFullYear();
     const month = pad(dateObj.getMonth() + 1);
