@@ -1,0 +1,26 @@
+---
+title: "Home"
+layout: base
+---
+
+<h1>Welcome!</h1>
+<p>This is my personal site for sharing <b>blogs</b>, <b>talks</b>, <b>tutorials</b>, and more. Enjoy the early-internet, neo-brutalist vibes!</p>
+<hr>
+<section>
+  <h2>Latest Articles</h2>
+  <ul>
+    {% for post in collections.article | reverse %}
+      {% if (loop.index <= 3) %}
+        <li>
+          <a href="{{ post.url }}">{{ post.data.title }}</a>
+          <span>({{ post.date | date("yyyy-MM-dd") }})</span>
+        </li>
+      {% endif %}
+    {% endfor %}
+  </ul>
+</section>
+<hr>
+<section>
+  <h2>Photos & Web Apps</h2>
+  <p>Coming soon!</p>
+</section>

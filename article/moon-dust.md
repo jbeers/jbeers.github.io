@@ -3,6 +3,7 @@ layout: article
 title: "Moon Dust: The Lunar Surface's Mysterious Powder"
 date: 2025-05-10
 description: "A brief exploration of moon dust, its properties, and why it fascinates scientists."
+tags: article
 ---
 
 # Moon Dust: The Lunar Surface's Mysterious Powder

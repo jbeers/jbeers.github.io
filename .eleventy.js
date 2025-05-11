@@ -2,9 +2,9 @@ module.exports = function(eleventyConfig) {
   // Copy style.css to the output folder
   eleventyConfig.addPassthroughCopy("style.css");
 
-  // Add a collection for articles (all markdown files in article/)
+  // Add a collection for articles using the 'article' tag
   eleventyConfig.addCollection("article", function(collectionApi) {
-    return collectionApi.getFilteredByGlob("article/*.md");
+    return collectionApi.getFilteredByTag("article");
   });
 
   // Add a simple Nunjucks date filter
