@@ -1,0 +1,151 @@
+/* Neo-brutalist + early internet inspired styles */
+/* :root {
+  --primary: #219EBC;           
+  --primary-light: #8ECAE6;     
+  --secondary: #FFB703;         
+  --accent: #FB8500;            
+  --background: #fff;           
+  --surface: #023047;           
+  --foreground: #023047;        
+  --on-primary: #fff;           
+  --on-secondary: #023047;      
+  --font-main: 'Courier New', Courier, monospace;
+} */
+/* 
+:root {
+  --primary: #233d4dff;    
+  --primary-light: #a1c181ff; 
+  --secondary: #fe7f2dff;    
+  --accent: #fcca46ff;       
+  --background: #fff;        
+  --surface: #619b8aff;      
+  --foreground: #233d4dff;   
+  --on-primary: #fff;        
+  --on-secondary: #233d4dff; 
+  --font-main: 'Courier New', Courier, monospace;
+} */
+
+:root {
+  --primary: #14213dff;        
+  --primary-light: #e5e5e5ff;  
+  --secondary: #fca311ff;      
+  --accent: #fca311ff;         
+  --background: #ffffffff;     
+  --surface: #000000ff;        
+  --foreground: #14213dff;     
+  --on-primary: #ffffffff;     
+  --on-secondary: #14213dff;   
+  --font-main: 'Courier New', Courier, monospace;
+}
+
+body {
+  background: var(--primary-light);
+  color: var(--foreground);
+  font-family: var(--font-main);
+  margin: 0;
+  padding: 0;
+}
+
+header, nav, main, footer {
+  box-shadow: 4px 4px 0 var(--surface);
+  border: 2px solid var(--surface);
+  margin: 2rem auto 1rem auto;
+  max-width: 800px;
+  background: var(--background);
+  padding: 1.5rem;
+}
+
+header {
+  background: var(--secondary);
+  text-align: center;
+  font-size: 2rem;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  background: var(--primary);
+}
+
+nav a {
+  color: var(--on-primary);
+  text-decoration: none;
+  font-weight: bold;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  transition: background 0.2s;
+}
+
+nav a:hover {
+  background: var(--accent);
+  color: var(--surface);
+}
+
+main {
+  background: var(--background);
+  min-height: 300px;
+}
+
+footer {
+  background: var(--surface);
+  color: var(--secondary);
+  text-align: center;
+  font-size: 1rem;
+  margin-bottom: 2rem;
+}
+
+h1, h2, h3 {
+  color: var(--accent);
+  margin-top: 0;
+  text-shadow:
+  -6px 6px 0px rgba( 0,0,0,1),
+  -5px 5px 0px rgba( 0,0,0,1),
+  -4px 4px 0px rgba( 0,0,0,1),
+  -3px 3px 0px rgba( 0,0,0,1),
+    -2px 2px 0px rgba( 0,0,0,1),
+    -1px -1px 0px rgba( 0,0,0,1),
+    1px 1px 0px rgba( 0,0,0,1),
+    1px -1px 0px rgba( 0,0,0,1);
+  font-size: 2.5rem;
+}
+
+hr {
+  border: none;
+  border-top: 2px dashed var(--surface);
+  margin: 2rem 0;
+}
+
+img {
+  max-width: 100%;
+  border: 3px solid var(--surface);
+  box-shadow: 2px 2px 0 var(--accent);
+  margin: 1rem 0;
+}
+
+.article-meta {
+  background: var(--primary-light);
+  border-left: 4px solid var(--primary);
+  padding: 0.5rem 1rem;
+  margin-bottom: 1.5rem;
+  font-size: 0.95rem;
+  color: var(--foreground);
+}
+
+.button {
+  background: var(--secondary);
+  color: var(--on-secondary);
+  border: 2px solid var(--surface);
+  padding: 0.5rem 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 2px 2px 0 var(--surface);
+  transition: background 0.2s;
+}
+
+.button:hover {
+  background: var(--accent);
+  color: var(--on-primary);
+}
