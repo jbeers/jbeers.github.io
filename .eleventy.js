@@ -2,6 +2,9 @@ module.exports = function(eleventyConfig) {
   // Copy style.css to the output folder
   eleventyConfig.addPassthroughCopy("style.css");
 
+  // Copy images folder to the output folder
+  eleventyConfig.addPassthroughCopy("images");
+
   // Add a collection for articles using the 'article' tag
   eleventyConfig.addCollection("article", function(collectionApi) {
     return collectionApi.getFilteredByTag("article");

@@ -15,6 +15,10 @@ Moon dust, also known as lunar regolith, is a fine, powdery substance that cover
 - **Electrostatic charge:** Sunlight can give moon dust an electric charge, causing it to levitate and stick to surfaces—including spacesuits and equipment.
 - **No organic material:** Unlike Earth soil, moon dust contains no plant or animal matter.
 
+
+![Moon Dust: A close-up view of lunar regolith particles](/images/moon-dust.png)
+
+
 ## Challenges for Exploration
 Astronauts on the Apollo missions found moon dust to be a significant challenge. It stuck to their suits, scratched visors, and even clogged equipment. Understanding and managing moon dust is a key concern for future lunar missions.
 
