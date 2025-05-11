@@ -1,0 +1,24 @@
+module.exports = function(eleventyConfig) {
+  // Copy style.css to the output folder
+  eleventyConfig.addPassthroughCopy("style.css");
+
+  // Add a collection for articles (all markdown files in article/)
+  eleventyConfig.addCollection("article", function(collectionApi) {
+    return collectionApi.getFilteredByGlob("article/*.md");
+  });
+
+  // Add a simple Nunjucks date filter
+  eleventyConfig.addNunjucksFilter("date", function(dateObj, format) {
+    const pad = n => n < 10 ? '0' + n : n;
+    const year = dateObj.getFullYear();
+    const month = pad(dateObj.getMonth() + 1);
+    const day = pad(dateObj.getDate());
+    if (format === "yyyy-MM-dd") {
+      return `${year}-${month}-${day}`;
+    }
+    if (format === "yyyy") {
+      return `${year}`;
+    }
+    return dateObj.toLocaleDateString();
+  });
+};

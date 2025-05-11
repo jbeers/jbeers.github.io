@@ -1,0 +1,35 @@
+---
+// 11ty layout for articles
+---
+<!DOCTYPE html>
+<html lang="en" x-data>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ title }} | Jacob's Site</title>
+  <link rel="stylesheet" href="/style.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</head>
+<body>
+  <header>
+    Article
+  </header>
+  <nav>
+    <a href="/">Home</a>
+    <a href="/about">About</a>
+    <a href="/article">Articles</a>
+  </nav>
+  <main>
+    <div class="article-meta">
+      <span><b>Title:</b> {{ title }}</span><br>
+      <span><b>Date:</b> {{ date }}</span><br>
+      {%- if author %}<span><b>Author:</b> {{ author }}</span><br>{% endif -%}
+      {%- if description %}<span><b>Description:</b> {{ description }}</span>{% endif -%}
+    </div>
+    {{ content }}
+  </main>
+  <footer>
+    &copy; 2025 Jacob | Built with HTML, CSS & Alpine.js
+  </footer>
+</body>
+</html>
