@@ -1,0 +1,1 @@
+alias gwc='git whatchanged --since="1 weeks ago"'
