@@ -1,1 +1,1 @@
-alias gwc='git whatchanged --since="1 weeks ago"'
+alias git-whatchanged='git whatchanged --since="1 weeks ago"'
