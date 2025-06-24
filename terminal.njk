@@ -6,10 +6,25 @@ layout: base
 <h1>Load this into your terminal</h1>
 <div>
   <h2>PowerShell</h2>
-  <pre><code>Invoke-RestMethod "https://jacobtbeers.com/res/my_terminal_config.ps1" | Invoke-Expression</code></pre>
-
+  <div style="position: relative;">
+    <pre><code>Invoke-RestMethod "https://jacobtbeers.com/res/my_terminal_config.ps1" | Invoke-Expression</code></pre>
+    <button 
+      style="position: absolute; top: 8px; right: 8px; background: var(--secondary); border: 1px solid var(--surface); border-radius: 4px; padding: 4px 8px; cursor: pointer; font-size: 12px;"
+      onclick="navigator.clipboard.writeText('Invoke-RestMethod &quot;https://jacobtbeers.com/res/my_terminal_config.ps1&quot; | Invoke-Expression')"
+      title="Copy to clipboard">
+      📋
+    </button>
+  </div>
 </div>
 <div>
   <h2>Bash</h2>
-  <pre><code>source (curl -sSL "https://jacobtbeers.com/res/my_terminal_config.sh")</code></pre>
+  <div style="position: relative;">
+    <pre><code>source (curl -sSL "https://jacobtbeers.com/res/my_terminal_config.sh")</code></pre>
+    <button 
+      style="position: absolute; top: 8px; right: 8px; background: var(--secondary); border: 1px solid var(--surface); border-radius: 4px; padding: 4px 8px; cursor: pointer; font-size: 12px;"
+      onclick="navigator.clipboard.writeText('source (curl -sSL &quot;https://jacobtbeers.com/res/my_terminal_config.sh&quot;)')"
+      title="Copy to clipboard">
+      📋
+    </button>
+  </div>
 </div>
