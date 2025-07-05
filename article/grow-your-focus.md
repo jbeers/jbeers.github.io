@@ -1,7 +1,7 @@
 ---
 layout: article
 title: "Battling Procrastination: Growing Your Focus Muscle"
-date: 2025-07-4
+date: 2025-07-04
 description: "Procrastination can be overcome with practice."
 tags: article
 ---
