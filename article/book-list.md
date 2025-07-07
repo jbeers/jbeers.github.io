@@ -1,7 +1,7 @@
 ---
 layout: article
 title: "100 Books I'll Make My Kids Read"
-date: 2025-05-10
+date: 2025-07-07
 description: "This is a list of 100 books meant to encourage my kids to read and think crtically."
 tags: article
 ---
