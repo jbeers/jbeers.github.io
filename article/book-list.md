@@ -22,6 +22,10 @@ I think this is a phenomenally good idea. I'm making a few tweaks to it for my o
 
 * Any book could be read to earn $1 (up to my discretion)
 * I will also curate a list of 100 books that are on a different scale
+* The tiers have to be read in order but the books within a tier can be read in any order
+  * $1 books before $5 books, etc...
+  * the $10 books can be ready in any order
+* At the start of the reading list each kid will create a github site and publish an article per book
 
 
 My list of 100 books will work like so
@@ -49,8 +53,20 @@ They are not currently in the final order.
 7. That Hideous Strength - C.S. Lewis
 8. A Pilgrim's Regress - C.S. Lewis
 9. The Abolition of Man - C.S. Lewis
+10. Miracles - C.S. Lewis
+11. Water Buffalo Theology - Kosuke Koyama
+12. Every Good Endeavor - Timothy Keller
 
 ## Changelog
+
+7/11/25
+Added the books
+
+10. Miracles - C.S. Lewis
+11. Water Buffalo Theology - Kosuke Koyama
+12. Every Good Endeavor - Timothy Keller
+
+Updated instructions to include rules for when a book can be read as well as starting a github repo.
 
 7/7/25
 Added the initial books
