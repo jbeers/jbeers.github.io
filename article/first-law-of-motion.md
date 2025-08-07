@@ -22,8 +22,8 @@ On another note I noticed that Newton said that objects will move in a constant 
 
 ## A Brain at Rest or A Brain in Motion?
 
-After sharing these thoughts with my son I began to introduce him to the implications for consciousness. Are our thoughts governed  by this law like a billiards table? Do our thoughts only move because something pushed them into this state and they have no option but to move forward at a constant speed in a straight line?
+After sharing these thoughts with my son I began to introduce him to the implications for consciousness. Are our thoughts governed  by this law like balls on a billiard table? Do our thoughts only move because something pushed them into this state and they have no option but to move forward at a constant speed in a straight line?
 
 Many philosophers think so. Many lay people claim to be "enlightened " by their pop-science articles they read on the internet. I doubt they had an opportunity to think very deeply about it before scrolling on.
 
-The question for me is why would I have this epiphany now, some twenty years or more from when I was first taught this law? Were my thoughts set on a course decades ago and only now do I have awareness of their implications? Was my brain at rest, content with its surface level understanding, when suddenly some outside force acted upon me to set a new pattern of thought in motion?
+So why the epiphany now, some twenty years or more from when I was first taught this law? Were my thoughts set on a course decades ago and only now do I have awareness of their implications? Was my brain at rest, content with its surface level understanding, when suddenly some outside force acted upon me to set a new pattern of thought in motion?
