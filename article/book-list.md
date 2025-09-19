@@ -56,8 +56,16 @@ They are not currently in the final order.
 10. Miracles - C.S. Lewis
 11. Water Buffalo Theology - Kosuke Koyama
 12. Every Good Endeavor - Timothy Keller
+13. Till We Have Faces - C.S. Lewis
+14. Boundaries - Dr. Henry Cloud & Dr. John Townsend
 
 ## Changelog
+
+9/19/25
+Added
+
+13. Till We Have Faces - C.S. Lewis
+14. Boundaries - Dr. Henry Cloud & Dr. John Townsend
 
 7/11/25
 Added the books
