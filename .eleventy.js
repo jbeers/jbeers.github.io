@@ -6,6 +6,7 @@ module.exports = function(eleventyConfig) {
   // Copy images folder to the output folder
   eleventyConfig.addPassthroughCopy("images");
   eleventyConfig.addPassthroughCopy("res");
+  eleventyConfig.addPassthroughCopy("pico-8");
 
   // Add a collection for articles using the 'article' tag
   eleventyConfig.addCollection("article", function(collectionApi) {
