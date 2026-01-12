@@ -3,29 +3,62 @@ title: "Home"
 layout: base
 ---
 
-<h1>Welcome!</h1>
-<p>This is my personal site for sharing <b>blogs</b>, <b>talks</b>, <b>tutorials</b>, and more. Enjoy the early-internet, neo-brutalist vibes!</p>
+<section class="hero">
+  <div class="photo-placeholder">J</div>
+  <div class="hero-text">
+    <h1>Hey, I'm Jacob</h1>
+    <p>Software engineer, conference speaker, and maker of things. I write about code, productivity, and whatever else is on my mind.</p>
+  </div>
+</section>
+
 <hr>
+
 <section>
   <h2>Latest Articles</h2>
-  <ul>
+  <div class="card-grid">
     {% for post in collections.article | reverse %}
       {% if (loop.index <= 3) %}
-        <li>
-          <a href="{{ post.url }}">{{ post.data.title }}</a>
-          <span>({{ post.date | date("yyyy-MM-dd") }})</span>
-        </li>
+        <div class="card">
+          <a href="{{ post.url }}" class="card-link">{{ post.data.title }}</a>
+          <div class="date">{{ post.date | date("yyyy-MM-dd") }}</div>
+        </div>
       {% endif %}
     {% endfor %}
+  </div>
+</section>
+
+<hr>
+
+<section>
+  <h2>Talks & Conferences</h2>
+  <ul class="talks-list">
+    <li>
+      <span class="talk-title">BoxLang IDE</span>
+      <span class="talk-venue">Into The Box 2025</span>
+    </li>
+    <li>
+      <span class="talk-title">Using cbSSO in a ColdBox App</span>
+      <span class="talk-venue">Into The Box 2025</span>
+    </li>
+    <li>
+      <span class="talk-title">Docker, CI/CD, and AWS ECS</span>
+      <span class="talk-venue">Into The Box 2025</span>
+    </li>
+    <li>
+      <span class="talk-title">Summary of "Out of the Tar Pit"</span>
+      <span class="talk-venue">CF Summit 2024</span>
+    </li>
   </ul>
 </section>
+
 <hr>
+
 <section>
   <h2>Projects</h2>
-  <div>
-    <h3>PICO-8 Games</h3>
-    <ul>
-      <li><a href="/pico-8/ufo.html">UFO</a></li>
-    </ul>
+  <div class="card-grid">
+    <div class="card">
+      <a href="/pico-8/ufo.html" class="card-link">UFO</a>
+      <p>A PICO-8 game experiment</p>
+    </div>
   </div>
 </section>
