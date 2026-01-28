@@ -338,6 +338,80 @@ pre {
   overflow-x: auto;
 }
 
+/* Theme Toggle Button */
+.theme-toggle {
+  background: transparent;
+  border: 2px solid currentColor;
+  border-radius: 50%;
+  padding: 0.5rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  color: var(--on-primary);
+}
+
+.theme-toggle:hover {
+  background: var(--secondary);
+  color: var(--on-secondary);
+  transform: scale(1.1);
+}
+
+/* Dark Mode Styles */
+[data-theme="dark"] {
+  --primary: #fca311;
+  --primary-light: #1a1a2e;
+  --secondary: #ff6b35;
+  --accent: #fca311;
+  --background: #0f0f1a;
+  --surface: #1a1a2e;
+  --foreground: #e0e0e0;
+  --on-primary: #0f0f1a;
+  --on-secondary: #0f0f1a;
+  --shadow-color: rgba(0, 0, 0, 0.3);
+  --shadow-hover: rgba(0, 0, 0, 0.5);
+}
+
+[data-theme="dark"] header {
+  background: linear-gradient(135deg, #1a1a2e 0%, #0f0f1a 100%);
+  color: var(--primary);
+}
+
+[data-theme="dark"] footer {
+  background: var(--surface);
+  color: var(--foreground);
+}
+
+[data-theme="dark"] .card {
+  border-color: rgba(255, 255, 255, 0.08);
+}
+
+[data-theme="dark"] .card p {
+  color: #a0a0a0;
+}
+
+[data-theme="dark"] .card .date {
+  color: #808080;
+}
+
+[data-theme="dark"] .talk-venue {
+  color: #a0a0a0;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+[data-theme="dark"] .talks-list li {
+  border-color: rgba(255, 255, 255, 0.06);
+}
+
+[data-theme="dark"] hr {
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+[data-theme="dark"] .theme-toggle {
+  color: var(--primary);
+}
+
 /* Responsive */
 @media (max-width: 600px) {
   .hero {
