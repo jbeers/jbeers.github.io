@@ -1,0 +1,609 @@
+---
+title: "Bayesian Analysis Helper"
+layout: base
+---
+
+<style>
+  .bayesian-container {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .intro-section {
+    background: linear-gradient(135deg, var(--primary-light) 0%, var(--background) 100%);
+    border-radius: var(--radius);
+    padding: 2rem;
+    margin-bottom: 2rem;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+  }
+  
+  .formula-box {
+    background: var(--primary);
+    color: var(--on-primary);
+    border-radius: var(--radius);
+    padding: 2rem;
+    margin: 1.5rem 0;
+    text-align: center;
+    font-size: 1.5rem;
+    font-family: var(--font-mono);
+    box-shadow: 0 8px 24px rgba(20, 33, 61, 0.3);
+  }
+  
+  [data-theme="dark"] .formula-box {
+    background: var(--surface);
+    color: var(--foreground);
+  }
+  
+  .formula-explanation {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+  
+  .formula-term {
+    background: var(--background);
+    border-radius: var(--radius-sm);
+    padding: 1rem;
+    border-left: 4px solid var(--secondary);
+  }
+  
+  .formula-term strong {
+    color: var(--primary);
+    font-family: var(--font-mono);
+    font-size: 1.2rem;
+  }
+  
+  .example-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin: 1.5rem 0;
+  }
+  
+  .example-btn {
+    background: linear-gradient(135deg, var(--secondary) 0%, var(--accent) 100%);
+    color: var(--on-secondary);
+    border: none;
+    padding: 0.75rem 1.25rem;
+    border-radius: 50px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 0 4px 12px rgba(252, 163, 17, 0.3);
+  }
+  
+  .example-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(252, 163, 17, 0.4);
+  }
+  
+  .tool-section {
+    background: var(--background);
+    border-radius: var(--radius);
+    padding: 2rem;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+  }
+  
+  .input-group {
+    margin-bottom: 1.5rem;
+  }
+  
+  .input-group label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: var(--primary);
+  }
+  
+  .input-group input[type="text"],
+  .input-group input[type="number"] {
+    width: 100%;
+    padding: 0.75rem;
+    border: 2px solid rgba(0, 0, 0, 0.1);
+    border-radius: var(--radius-sm);
+    font-size: 1rem;
+    transition: border-color 0.2s ease;
+    background: var(--background);
+    color: var(--foreground);
+  }
+  
+  .input-group input:focus {
+    outline: none;
+    border-color: var(--secondary);
+  }
+  
+  .slider-container {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  .slider-container input[type="range"] {
+    flex: 1;
+    height: 8px;
+    -webkit-appearance: none;
+    appearance: none;
+    background: linear-gradient(90deg, var(--primary-light) 0%, var(--secondary) 100%);
+    border-radius: 4px;
+    outline: none;
+  }
+  
+  .slider-container input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 24px;
+    height: 24px;
+    background: var(--primary);
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    transition: transform 0.2s ease;
+  }
+  
+  .slider-container input[type="range"]::-webkit-slider-thumb:hover {
+    transform: scale(1.1);
+  }
+  
+  .slider-value {
+    font-weight: 700;
+    font-size: 1.25rem;
+    color: var(--primary);
+    min-width: 60px;
+    text-align: right;
+  }
+  
+  .evidence-section {
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 2px solid var(--primary-light);
+  }
+  
+  .evidence-item {
+    background: var(--primary-light);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+    position: relative;
+  }
+  
+  .evidence-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+  
+  .evidence-number {
+    background: var(--primary);
+    color: var(--on-primary);
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+  }
+  
+  .remove-btn {
+    background: transparent;
+    border: 2px solid var(--accent);
+    color: var(--accent);
+    padding: 0.25rem 0.75rem;
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    font-size: 0.85rem;
+    transition: all 0.2s ease;
+  }
+  
+  .remove-btn:hover {
+    background: var(--accent);
+    color: white;
+  }
+  
+  .evidence-name-group {
+    margin-bottom: 1.5rem;
+  }
+  
+  .evidence-name-group input {
+    font-size: 1.1rem;
+    font-weight: 500;
+  }
+  
+  .evidence-sliders {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+  }
+  
+  @media (max-width: 600px) {
+    .evidence-sliders {
+      grid-template-columns: 1fr;
+    }
+  }
+  
+  .add-evidence-btn {
+    background: var(--primary);
+    color: var(--on-primary);
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: var(--radius);
+    font-weight: 600;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 1rem;
+    transition: all 0.2s ease;
+    box-shadow: 0 4px 12px rgba(20, 33, 61, 0.3);
+  }
+  
+  .add-evidence-btn:hover {
+    background: var(--accent);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(255, 107, 53, 0.4);
+  }
+  
+  .results-section {
+    margin-top: 2rem;
+    padding: 2rem;
+    background: linear-gradient(135deg, var(--primary) 0%, #1a2d4d 100%);
+    border-radius: var(--radius);
+    color: var(--on-primary);
+    text-align: center;
+  }
+  
+  [data-theme="dark"] .results-section {
+    background: linear-gradient(135deg, var(--surface) 0%, #2d2d2d 100%);
+  }
+  
+  .result-label {
+    font-size: 0.9rem;
+    opacity: 0.8;
+    margin-bottom: 0.5rem;
+  }
+  
+  .result-value {
+    font-size: 3rem;
+    font-weight: 700;
+    margin: 1rem 0;
+  }
+  
+  .probability-bar {
+    width: 100%;
+    height: 24px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 12px;
+    overflow: hidden;
+    margin: 1rem 0;
+    position: relative;
+  }
+  
+  .probability-fill {
+    height: 100%;
+    border-radius: 12px;
+    transition: width 0.5s ease, background-color 0.3s ease;
+    position: relative;
+  }
+  
+  .probability-fill::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.3) 50%, transparent 100%);
+    animation: shimmer 2s infinite;
+  }
+  
+  @keyframes shimmer {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+  }
+  
+  .result-interpretation {
+    font-size: 1.1rem;
+    margin-top: 1rem;
+    padding: 0.75rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: var(--radius-sm);
+  }
+  
+  .info-box {
+    background: linear-gradient(135deg, rgba(252, 163, 17, 0.1) 0%, rgba(255, 107, 53, 0.1) 100%);
+    border-left: 4px solid var(--secondary);
+    padding: 1.5rem;
+    border-radius: 0 var(--radius) var(--radius) 0;
+    margin: 1.5rem 0;
+  }
+  
+  .info-box h4 {
+    margin-top: 0;
+    color: var(--primary);
+  }
+  
+  .mini-example {
+    background: var(--background);
+    border: 2px dashed var(--secondary);
+    padding: 1rem;
+    border-radius: var(--radius-sm);
+    margin: 1rem 0;
+    font-style: italic;
+  }
+  
+  .calculation-steps {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: var(--radius-sm);
+    padding: 1rem;
+    margin-top: 1rem;
+    font-family: var(--font-mono);
+    font-size: 0.9rem;
+    text-align: left;
+  }
+  
+  .calculation-steps div {
+    margin: 0.5rem 0;
+    opacity: 0.9;
+  }
+</style>
+
+<div class="bayesian-container" x-data="bayesianCalculator()">
+  
+  <div class="intro-section">
+    <h1>Bayesian Analysis Helper</h1>
+    
+    <h3>What is Bayesian Reasoning?</h3>
+    <p>Bayesian reasoning is a powerful way to update your beliefs based on new evidence. Instead of treating probabilities as fixed facts, Bayes' theorem gives you a mathematical framework to systematically adjust your confidence as you gather more information.</p>
+    
+    <div class="mini-example">
+      <strong>Quick Example:</strong> You think there's a 30% chance it will rain today (your prior). Then you see dark clouds rolling in. Bayes' theorem tells you exactly how much to update that 30% based on how likely those clouds are when it actually rains versus when it doesn't.
+    </div>
+    
+    <div class="info-box">
+      <h4>What is a "Prior"?</h4>
+      <p>Your <strong>prior probability</strong> is your initial belief before seeing any new evidence. It represents what you think is true based on your existing knowledge. As you gather evidence, this prior gets updated into a <strong>posterior probability</strong> — your new, evidence-informed belief.</p>
+    </div>
+    
+    <div class="info-box">
+      <h4>Who Was Bayes?</h4>
+      <p><strong>Thomas Bayes</strong> (1701–1761) was an English statistician, philosopher, and Presbyterian minister. His famous theorem was published posthumously in 1763 and has become one of the most important concepts in statistics, machine learning, artificial intelligence, and scientific reasoning.</p>
+    </div>
+    
+    <h3>Bayes' Theorem</h3>
+    <div class="formula-box">
+      P(H|E) = <span style="color: var(--secondary);">P(E|H) × P(H)</span> / P(E)
+    </div>
+    
+    <div class="formula-explanation">
+      <div class="formula-term">
+        <strong>P(H|E)</strong><br>
+        Posterior: Updated belief after seeing evidence
+      </div>
+      <div class="formula-term">
+        <strong>P(H)</strong><br>
+        Prior: Initial belief before evidence
+      </div>
+      <div class="formula-term">
+        <strong>P(E|H)</strong><br>
+        Likelihood: Probability of evidence if hypothesis is true
+      </div>
+      <div class="formula-term">
+        <strong>P(E)</strong><br>
+        Total probability of the evidence
+      </div>
+    </div>
+  </div>
+  
+  <div class="tool-section">
+    <h2>Try It Out</h2>
+    <p>Choose an example scenario or create your own:</p>
+    
+    <div class="example-buttons">
+      <button class="example-btn" @click="loadExample('medical')">🏥 Medical Test</button>
+      <button class="example-btn" @click="loadExample('weather')">🌧️ Will it Rain?</button>
+      <button class="example-btn" @click="loadExample('cat')">🐱 Is My Cat Plotting?</button>
+      <button class="example-btn" @click="loadExample('aliens')">👽 Ancient Aliens?</button>
+    </div>
+    
+    <div class="input-group">
+      <label for="claim">Your Claim/Belief</label>
+      <input type="text" id="claim" x-model="claim" placeholder="e.g., The pyramids were constructed in 20 years">
+    </div>
+    
+    <div class="input-group">
+      <label>Prior Probability (Initial Belief)</label>
+      <div class="slider-container">
+        <input type="range" min="0" max="100" x-model="prior" @input="calculate()">
+        <span class="slider-value" x-text="prior + '%'"></span>
+      </div>
+    </div>
+    
+    <div class="evidence-section">
+      <h3>Evidence <span x-show="evidence.length > 0" x-text="'(' + evidence.length + ' items)'"></span></h3>
+      
+      <template x-for="(item, index) in evidence" :key="index">
+        <div class="evidence-item">
+          <div class="evidence-header">
+            <div class="evidence-number" x-text="index + 1"></div>
+            <button class="remove-btn" @click="removeEvidence(index)">Remove</button>
+          </div>
+          
+          <div class="input-group evidence-name-group">
+            <label>Evidence Name</label>
+            <input type="text" x-model="item.name" @input="calculate()" placeholder="e.g., Carbon dating results">
+          </div>
+          
+          <div class="evidence-sliders">
+            <div class="input-group">
+              <label>P(E|H) - Probability of this evidence if your claim is TRUE</label>
+              <div class="slider-container">
+                <input type="range" min="0" max="100" x-model="item.probTrue" @input="calculate()">
+                <span class="slider-value" x-text="item.probTrue + '%'"></span>
+              </div>
+            </div>
+            
+            <div class="input-group">
+              <label>P(E|¬H) - Probability of this evidence if your claim is FALSE</label>
+              <div class="slider-container">
+                <input type="range" min="0" max="100" x-model="item.probFalse" @input="calculate()">
+                <span class="slider-value" x-text="item.probFalse + '%'"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </template>
+      
+      <button class="add-evidence-btn" @click="addEvidence()">+ Add Evidence</button>
+    </div>
+    
+    <div class="results-section" x-show="evidence.length > 0 || prior > 0">
+      <div class="result-label">Final Probability</div>
+      <div class="result-value" x-text="formatProbability(finalProbability)"></div>
+      
+      <div class="probability-bar">
+        <div class="probability-fill" :style="{ width: finalProbability + '%', backgroundColor: getProbabilityColor(finalProbability) }"></div>
+      </div>
+      
+      <div class="result-interpretation" x-text="getInterpretation(finalProbability)"></div>
+      
+      <div class="calculation-steps" x-show="calculationSteps.length > 0">
+        <div><strong>Calculation Steps:</strong></div>
+        <template x-for="step in calculationSteps" :key="step">
+          <div x-text="step"></div>
+        </template>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+function bayesianCalculator() {
+  return {
+    claim: '',
+    prior: 50,
+    evidence: [],
+    finalProbability: 50,
+    calculationSteps: [],
+    
+    init() {
+      this.calculate();
+    },
+    
+    addEvidence() {
+      this.evidence.push({
+        name: '',
+        probTrue: 80,
+        probFalse: 20
+      });
+      this.calculate();
+    },
+    
+    removeEvidence(index) {
+      this.evidence.splice(index, 1);
+      this.calculate();
+    },
+    
+    calculate() {
+      let currentProb = this.prior / 100;
+      this.calculationSteps = [];
+      
+      if (this.evidence.length === 0) {
+        this.finalProbability = this.prior;
+        return;
+      }
+      
+      this.calculationSteps.push(`Starting prior: ${(currentProb * 100).toFixed(1)}%`);
+      
+      for (let i = 0; i < this.evidence.length; i++) {
+        const e = this.evidence[i];
+        const pEH = e.probTrue / 100;  // P(E|H)
+        const pEnotH = e.probFalse / 100;  // P(E|¬H)
+        
+        // Bayes' theorem: P(H|E) = P(E|H) * P(H) / [P(E|H) * P(H) + P(E|¬H) * P(¬H)]
+        const numerator = pEH * currentProb;
+        const denominator = numerator + (pEnotH * (1 - currentProb));
+        const posterior = denominator === 0 ? currentProb : numerator / denominator;
+        
+        const evidenceName = e.name || `Evidence ${i + 1}`;
+        this.calculationSteps.push(`${evidenceName}: ${(currentProb * 100).toFixed(1)}% → ${(posterior * 100).toFixed(1)}%`);
+        
+        currentProb = posterior;
+      }
+      
+      this.finalProbability = Math.round(currentProb * 100);
+    },
+    
+    formatProbability(prob) {
+      return prob.toFixed(1) + '%';
+    },
+    
+    getProbabilityColor(prob) {
+      if (prob < 30) return '#e74c3c';  // Red
+      if (prob < 50) return '#e67e22';  // Orange
+      if (prob < 70) return '#f39c12';  // Yellow
+      if (prob < 85) return '#2ecc71';  // Green
+      return '#27ae60';  // Dark green
+    },
+    
+    getInterpretation(prob) {
+      if (prob < 10) return "Very unlikely - You should probably reject this belief";
+      if (prob < 30) return "Unlikely - Evidence suggests this is probably false";
+      if (prob < 50) return "Somewhat unlikely - Lean towards false, but not certain";
+      if (prob === 50) return "Perfectly uncertain - Evidence is perfectly balanced";
+      if (prob < 70) return "Somewhat likely - Lean towards true, but not certain";
+      if (prob < 85) return "Likely - Evidence supports this belief";
+      if (prob < 95) return "Very likely - Strong evidence in favor";
+      return "Almost certain - Evidence overwhelmingly supports this";
+    },
+    
+    loadExample(type) {
+      this.calculationSteps = [];
+      
+      switch(type) {
+        case 'medical':
+          this.claim = "I have a rare disease (1% prevalence)";
+          this.prior = 1;
+          this.evidence = [
+            { name: "Positive test result (95% accurate)", probTrue: 95, probFalse: 5 }
+          ];
+          break;
+          
+        case 'weather':
+          this.claim = "It will rain today";
+          this.prior = 30;
+          this.evidence = [
+            { name: "Dark clouds in the sky", probTrue: 80, probFalse: 20 },
+            { name: "Weather app says 90% rain", probTrue: 90, probFalse: 30 }
+          ];
+          break;
+          
+        case 'cat':
+          this.claim = "My cat is secretly plotting world domination";
+          this.prior = 5;
+          this.evidence = [
+            { name: "Stares at me while I sleep", probTrue: 90, probFalse: 40 },
+            { name: "Knocks things off tables deliberately", probTrue: 85, probFalse: 25 },
+            { name: "Hides in boxes (tactical planning?)", probTrue: 70, probFalse: 60 },
+            { name: "Brings 'gifts' (practice for hunting humans?)", probTrue: 60, probFalse: 30 }
+          ];
+          break;
+          
+        case 'aliens':
+          this.claim = "Ancient aliens built the pyramids";
+          this.prior = 10;
+          this.evidence = [
+            { name: "Precise astronomical alignment", probTrue: 85, probFalse: 30 },
+            { name: "Construction techniques ahead of their time", probTrue: 80, probFalse: 40 },
+            { name: "No evidence of alien tools/materials", probTrue: 5, probFalse: 95 },
+            { name: "Historical records show human construction", probTrue: 10, probFalse: 90 }
+          ];
+          break;
+      }
+      
+      this.calculate();
+    }
+  }
+}
+</script>
