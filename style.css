@@ -53,6 +53,23 @@ nav {
   padding: 1rem;
 }
 
+header a {
+  color: inherit;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.9rem;
+  padding: 0.4rem 0.8rem;
+  border-radius: 50px;
+  transition: all 0.2s ease;
+  background: transparent;
+}
+
+header a:hover {
+  background: var(--on-primary);
+  color: var(--primary);
+  transform: translateY(-2px);
+}
+
 nav a {
   color: var(--primary);
   text-decoration: none;
