@@ -21,7 +21,6 @@ body {
   background: var(--primary-light);
   color: var(--foreground);
   font-family: var(--font-main);
-  margin: 0;
   padding: 0;
   line-height: 1.6;
 }
@@ -31,20 +30,18 @@ header, nav, main, footer {
   border: 1px solid rgba(0, 0, 0, 0.06);
   border-radius: var(--radius);
   margin: 1.5rem auto;
-  max-width: 800px;
   background: var(--background);
-  padding: 1.5rem;
 }
 
 header {
   background: linear-gradient(135deg, var(--primary) 0%, #1a2d4d 100%);
   color: var(--on-primary);
-  text-align: center;
+  text-align: left;
   font-size: 1.75rem;
   font-weight: 700;
   letter-spacing: 1px;
   border: none;
-  margin-top: 2rem;
+  padding: 1.5rem;
 }
 
 nav {
@@ -52,8 +49,8 @@ nav {
   justify-content: center;
   gap: 0.5rem;
   background: var(--background);
-  padding: 1rem;
   flex-wrap: wrap;
+  padding: 1rem;
 }
 
 nav a {
@@ -75,7 +72,7 @@ nav a:hover {
 main {
   background: var(--background);
   min-height: 300px;
-  padding: 2rem;
+  padding: 1rem;
 }
 
 footer {
@@ -83,8 +80,8 @@ footer {
   color: var(--on-primary);
   text-align: center;
   font-size: 0.9rem;
-  margin-bottom: 2rem;
   border: none;
+  padding: 1rem;
 }
 
 footer a {
@@ -210,6 +207,15 @@ ol li, ul li {
   font-size: 2.5rem;
   font-weight: 700;
   color: var(--primary);
+  box-shadow: 0 4px 16px rgba(252, 163, 17, 0.3);
+}
+
+.profile-photo {
+  width: 120px;
+  height: 120px;
+  min-width: 120px;
+  border-radius: 50%;
+  object-fit: cover;
   box-shadow: 0 4px 16px rgba(252, 163, 17, 0.3);
 }
 
@@ -358,24 +364,24 @@ pre {
   transform: scale(1.1);
 }
 
-/* Dark Mode Styles */
+/* Dark Mode Styles - Gruvbox */
 [data-theme="dark"] {
-  --primary: #fca311;
-  --primary-light: #1a1a2e;
-  --secondary: #ff6b35;
-  --accent: #fca311;
-  --background: #0f0f1a;
-  --surface: #1a1a2e;
-  --foreground: #e0e0e0;
-  --on-primary: #0f0f1a;
-  --on-secondary: #0f0f1a;
-  --shadow-color: rgba(0, 0, 0, 0.3);
-  --shadow-hover: rgba(0, 0, 0, 0.5);
+  --primary: #fe8019;
+  --primary-light: #3c3836;
+  --secondary: #fabd2f;
+  --accent: #fb4934;
+  --background: #282828;
+  --surface: #3c3836;
+  --foreground: #ebdbb2;
+  --on-primary: #282828;
+  --on-secondary: #282828;
+  --shadow-color: rgba(0, 0, 0, 0.4);
+  --shadow-hover: rgba(0, 0, 0, 0.6);
 }
 
 [data-theme="dark"] header {
-  background: linear-gradient(135deg, #1a1a2e 0%, #0f0f1a 100%);
-  color: var(--primary);
+  background: linear-gradient(135deg, #3c3836 0%, #282828 100%);
+  color: var(--secondary);
 }
 
 [data-theme="dark"] footer {
