@@ -336,6 +336,14 @@ section:last-child {
   color: var(--primary);
 }
 
+a.talk-title {
+  text-decoration: none;
+}
+
+a.talk-title:hover {
+  color: var(--accent);
+}
+
 .talk-venue {
   font-size: 0.85rem;
   color: #666;
