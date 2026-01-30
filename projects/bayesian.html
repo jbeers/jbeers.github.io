@@ -169,9 +169,9 @@ layout: base
   
   .evidence-header {
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    margin-bottom: 1rem;
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
   }
   
   .evidence-number {
@@ -184,31 +184,59 @@ layout: base
     align-items: center;
     justify-content: center;
     font-weight: 700;
+    flex-shrink: 0;
+  }
+  
+  .evidence-input-wrapper {
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.5rem;
+    min-width: 0;
+  }
+  
+  .evidence-input-wrapper label {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--primary);
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+  
+  .evidence-input-wrapper input {
+    flex: 1;
+    padding: 0.5rem 0.75rem;
+    border: 2px solid rgba(0, 0, 0, 0.1);
+    border-radius: var(--radius-sm);
+    font-size: 1rem;
+    background: var(--background);
+    color: var(--foreground);
+    box-sizing: border-box;
+    min-width: 0;
+  }
+  
+  .evidence-input-wrapper input:focus {
+    outline: none;
+    border-color: var(--secondary);
   }
   
   .remove-btn {
     background: transparent;
     border: 2px solid var(--accent);
     color: var(--accent);
-    padding: 0.25rem 0.75rem;
+    padding: 0.4rem 0.75rem;
     border-radius: var(--radius-sm);
     cursor: pointer;
     font-size: 0.85rem;
     transition: all 0.2s ease;
+    flex-shrink: 0;
+    white-space: nowrap;
   }
   
   .remove-btn:hover {
     background: var(--accent);
     color: white;
-  }
-  
-  .evidence-name-group {
-    margin-bottom: 1.5rem;
-  }
-  
-  .evidence-name-group input {
-    font-size: 1.1rem;
-    font-weight: 500;
   }
   
   .evidence-sliders {
@@ -427,12 +455,11 @@ layout: base
         <div class="evidence-item">
           <div class="evidence-header">
             <div class="evidence-number" x-text="index + 1"></div>
+            <div class="evidence-input-wrapper">
+              <label>Evidence:</label>
+              <input type="text" x-model="item.name" @input="calculate()" placeholder="e.g., Carbon dating results">
+            </div>
             <button class="remove-btn" @click="removeEvidence(index)">Remove</button>
-          </div>
-          
-          <div class="input-group evidence-name-group">
-            <label>Evidence Name</label>
-            <input type="text" x-model="item.name" @input="calculate()" placeholder="e.g., Carbon dating results">
           </div>
           
           <div class="evidence-sliders">
