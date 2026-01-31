@@ -7,6 +7,7 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("images");
   eleventyConfig.addPassthroughCopy("res");
   eleventyConfig.addPassthroughCopy("pico-8");
+  eleventyConfig.addPassthroughCopy("cheat.js");
 
   // Add a collection for articles using the 'article' tag
   eleventyConfig.addCollection("article", function(collectionApi) {

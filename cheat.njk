@@ -1,0 +1,58 @@
+---
+title: "Shortcuts Cheat Sheet"
+layout: base
+---
+
+<div x-data="cheatSheet">
+
+    <div class="search-container">
+        <input 
+            type="text" 
+            x-model="search" 
+            placeholder="Search shortcuts... (e.g., 'save', 'window', 'tmux')"
+            class="search-input"
+        >
+        <span class="search-count" x-text="filteredKeybindings.length + ' shortcuts'"></span>
+    </div>
+
+    <!-- Search Results View -->
+    <div x-show="search.trim()" class="search-results">
+        <template x-for="kb in searchResults" :key="kb.app + kb.keybind + kb.description">
+            <div class="shortcut-row search-result">
+                <span class="app-badge" x-text="kb.app"></span>
+                <span class="category-tag" x-text="kb.category"></span>
+                <kbd x-text="kb.keybind"></kbd>
+                <span class="description" x-text="kb.description"></span>
+            </div>
+        </template>
+        <div x-show="searchResults.length === 0" class="no-results">
+            No shortcuts found matching your search.
+        </div>
+    </div>
+
+    <!-- Grouped View (when not searching) -->
+    <div x-show="!search.trim()" class="grouped-view">
+        <template x-for="(categories, app) in groupedByApp" :key="app">
+            <div class="app-section">
+                <h2 class="app-title" x-text="app.charAt(0).toUpperCase() + app.slice(1)"></h2>
+                
+                <template x-for="(shortcuts, category) in categories" :key="category">
+                    <div class="category-section">
+                        <h3 class="category-title" x-text="category"></h3>
+                        <div class="shortcuts-table">
+                            <template x-for="kb in shortcuts" :key="kb.keybind">
+                                <div class="shortcut-row">
+                                    <kbd x-text="kb.keybind"></kbd>
+                                    <span class="description" x-text="kb.description"></span>
+                                </div>
+                            </template>
+                        </div>
+                    </div>
+                </template>
+            </div>
+        </template>
+    </div>
+
+</div>
+
+<script src="/cheat.js"></script>

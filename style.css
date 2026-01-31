@@ -509,3 +509,302 @@ pre {
     margin-left: auto;
   }
 }
+
+/* Cheat Sheet Styles */
+.search-container {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1.25rem;
+}
+
+.search-input {
+  flex: 1;
+  padding: 0.5rem 0.75rem;
+  font-size: 0.9rem;
+  border: 1px solid var(--primary-light);
+  border-radius: var(--radius-sm);
+  background: var(--background);
+  color: var(--foreground);
+  transition: all 0.2s ease;
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: var(--secondary);
+  box-shadow: 0 0 0 2px rgba(252, 163, 17, 0.2);
+}
+
+.search-count {
+  font-size: 0.8rem;
+  color: #666;
+  white-space: nowrap;
+}
+
+.app-section {
+  margin-bottom: 1.5rem;
+}
+
+.app-title {
+  font-size: 1.25rem;
+  color: var(--primary);
+  margin-bottom: 0.75rem;
+  text-transform: capitalize;
+  font-weight: 700;
+}
+
+.grouped-view {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 1rem;
+}
+
+.category-section {
+  margin-bottom: 1rem;
+  padding-left: 0;
+}
+
+.category-title {
+  font-size: 0.85rem;
+  color: var(--foreground);
+  margin-bottom: 0.35rem;
+  padding-bottom: 0.15rem;
+  border-bottom: 2px solid var(--secondary);
+  display: inline-block;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.shortcuts-table {
+  display: grid;
+  gap: 0.15rem;
+}
+
+.shortcut-row {
+  display: grid;
+  grid-template-columns: 100px 1fr;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.2rem 0;
+  font-size: 0.85rem;
+  border-bottom: 1px solid var(--primary-light);
+}
+
+.shortcut-row.search-result {
+  grid-template-columns: auto auto 120px 1fr;
+  gap: 0.5rem;
+  padding: 0.35rem 0;
+}
+
+.shortcut-row:last-child {
+  border-bottom: none;
+}
+
+kbd {
+  display: inline-block;
+  padding: 0.2rem 0.4rem;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  background: var(--surface);
+  color: var(--on-primary);
+  border-radius: 4px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0 1px 2px var(--shadow-color);
+  text-align: center;
+  min-width: fit-content;
+  line-height: 1;
+}
+
+.description {
+  color: var(--foreground);
+  font-size: 0.85rem;
+}
+
+.app-badge {
+  display: inline-block;
+  padding: 0.15rem 0.5rem;
+  font-size: 0.65rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  background: var(--primary);
+  color: var(--on-primary);
+  border-radius: 50px;
+}
+
+.category-tag {
+  display: inline-block;
+  padding: 0.1rem 0.35rem;
+  font-size: 0.65rem;
+  background: var(--secondary);
+  color: var(--on-secondary);
+  border-radius: 3px;
+}
+
+.no-results {
+  text-align: center;
+  padding: 1rem;
+  color: #666;
+  font-style: italic;
+  font-size: 0.9rem;
+}
+
+/* Dark mode adjustments for cheat sheet */
+[data-theme="dark"] .search-input {
+  background: var(--surface);
+  border-color: var(--primary-light);
+  color: var(--foreground);
+}
+
+[data-theme="dark"] .search-input:focus {
+  border-color: var(--secondary);
+  box-shadow: 0 0 0 3px rgba(250, 189, 47, 0.2);
+}
+
+[data-theme="dark"] .shortcut-row {
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+[data-theme="dark"] kbd {
+  background: var(--primary-light);
+  color: var(--foreground);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+[data-theme="dark"] .search-count {
+  color: #a0a0a0;
+}
+
+[data-theme="dark"] .no-results {
+  color: #a0a0a0;
+}
+
+/* Sidebar Styles */
+.main-with-sidebar {
+  position: relative;
+  z-index: 10;
+}
+
+.sidebar {
+  display: none;
+}
+
+.sidebar-content {
+  background: var(--background);
+  border-radius: var(--radius);
+  padding: 0.75rem;
+  box-shadow: 0 2px 8px var(--shadow-color);
+  min-width: 120px;
+}
+
+.sidebar h3 {
+  margin: 0 0 0.75rem 0;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--primary);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border-bottom: 1px solid rgba(252, 163, 17, 0.3);
+  padding-bottom: 0.4rem;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar li {
+  margin-bottom: 0.4rem;
+}
+
+.sidebar li:last-child {
+  margin-bottom: 0;
+}
+
+.sidebar a {
+  display: block;
+  padding: 0.25rem 0;
+  font-size: 0.85rem;
+  color: var(--secondary);
+  text-decoration: none;
+  transition: all 0.2s ease;
+  border-bottom: 1px solid transparent;
+}
+
+.sidebar a:hover {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
+  padding-left: 0.25rem;
+}
+
+[data-theme="dark"] .sidebar-content {
+  border-color: rgba(255, 255, 255, 0.08);
+}
+
+/* Desktop sidebar - attached/sliding out from main content */
+@media (min-width: 1100px) {
+  .sidebar {
+    display: block;
+    position: absolute;
+    top: 100px;
+    left: 100%;
+    margin-left: 0;
+    z-index: -1;
+  }
+  
+  .sidebar-content {
+    border-radius: 0 var(--radius) var(--radius) 0;
+    box-shadow: -2px 2px 8px var(--shadow-color), 2px 2px 8px var(--shadow-color);
+    margin-left: -1px;
+    border-top: 3px solid transparent;
+    border-right: 3px solid transparent;
+    border-bottom: 3px solid transparent;
+    border-left: none;
+    background: linear-gradient(var(--background), var(--background)) padding-box,
+                linear-gradient(135deg, var(--secondary) 0%, var(--accent) 100%) border-box;
+    padding: 0.75rem;
+  }
+}
+
+[data-theme="dark"] .sidebar-content {
+  background: linear-gradient(var(--surface), var(--surface)) padding-box,
+              linear-gradient(135deg, var(--secondary) 0%, var(--accent) 100%) border-box;
+}
+
+/* Responsive adjustments for cheat sheet */
+@media (max-width: 768px) {
+  .grouped-view {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+
+  .shortcut-row {
+    grid-template-columns: 90px 1fr;
+    gap: 0.35rem;
+    padding: 0.15rem 0;
+  }
+
+  .shortcut-row.search-result {
+    grid-template-columns: 1fr;
+    gap: 0.35rem;
+    padding: 0.5rem;
+    background: var(--primary-light);
+    border-radius: var(--radius-sm);
+    margin-bottom: 0.35rem;
+  }
+
+  .search-container {
+    flex-direction: row;
+    gap: 0.5rem;
+  }
+
+  .search-input {
+    font-size: 0.85rem;
+  }
+
+  .app-title {
+    font-size: 1.1rem;
+  }
+}
