@@ -1,0 +1,42 @@
+{
+  "attribution": "These quotes are originally from various sources throughought antiquity. I personally collected them from Latin Quips at Your Fingertips by Rose Williams",
+  "quotes": [
+    {
+      "english": "Anger is the one thing made better by delay.",
+      "latin": "Rei nulli prodest mora nisi iracundiae.",
+      "citation": "Syrus, Maxims",
+      "name": "Syrus"
+    },
+    {
+      "english": "Am I to stand idel and unnoticed, so handsome and so heroic, all for nothing?",
+      "latin": "Hic astabo tantisper cum hac forma et factis frustra?",
+      "citation": "Plautus, Miles Gloriosus, 1021",
+      "name": "Plautus"
+    },
+
+    {
+      "english": "If you want to be loved, be lovable!",
+      "latin": "Ut ameris, amabilis esto!",
+      "citation": "Ovid, Ars Amatoria, II, 107",
+      "name": "Ovid"
+    },
+    {
+      "english": "Beware of Greeks bearing gifts.",
+      "latin": "Timeo Danaos et dona ferentes.",
+      "citation": "Virgil, Aeneid, II, 49",
+      "name": "Virgil"
+    },
+    {
+      "english": "For Heaven's sake, why are you and cheerfulness complete strangers?",
+      "latin": "Quid, cedo, te obsecro tam abhorret hilaritudo?",
+      "citation": "Plautus, Cistellaria, 54",
+      "name": "Plautus"
+    },
+    {
+      "english": "Some, through fear of death, prayed to die.",
+      "latin": "Quidam timore mortis mortem orabant.",
+      "citation": "Pliny the Younger, Epistula Cornelio Tacito",
+      "name": "Pliny the Younger"
+    }
+  ]
+}
