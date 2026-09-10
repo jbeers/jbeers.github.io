@@ -31,7 +31,7 @@ async function downloadLatestRelease(repo, directory) {
     "download",
     "--repo",
     repo,
-    "--archive=zip",
+    "--pattern=site.zip",
     "--dir",
     directory,
     "--clobber"
