@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "npx @11ty/eleventy --serve",
-    "build-ghpages": "npx @11ty/eleventy --pathprefix=/jbeers.github.io/"
+    "build-ghpages": "npx @11ty/eleventy --pathprefix=/jbeers.github.io/",
+    "fetch-external-projects": "node scripts/fetch-external-projects.mjs"
   },
   "author": "",
   "license": "ISC",

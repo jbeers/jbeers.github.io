@@ -41,6 +41,11 @@ jobs:
 
       - run: npm install
       - run: npm run build-ghpages
+
+      - name: Fetch external project releases
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: npm run fetch-external-projects
           
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
