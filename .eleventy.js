@@ -1,5 +1,16 @@
+const hljs = require("highlight.js");
+
+function highlight(content, language = "plaintext") {
+  const code = hljs.highlight(content, {
+    language: hljs.getLanguage(language) ? language : "plaintext"
+  }).value;
+  return `<pre tabindex="0"><code class="hljs">${code}</code></pre>`;
+}
+
 module.exports = function(eleventyConfig) {
-  
+  eleventyConfig.amendLibrary("md", md => md.set({ highlight }));
+  eleventyConfig.addPairedShortcode("highlight", highlight);
+
   // Copy style.css to the output folder
   eleventyConfig.addPassthroughCopy("style.css");
 

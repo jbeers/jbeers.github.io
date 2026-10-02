@@ -14,7 +14,13 @@
   --radius: 12px;
   --radius-sm: 8px;
   --font-main: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  --font-mono: 'Courier New', Courier, monospace;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  --code-comment: #596579;
+  --code-keyword: #7c3aed;
+  --code-string: #21743c;
+  --code-function: #8f4e13;
+  --code-number: #b42318;
+  --code-variable: #005a9c;
 }
 
 body {
@@ -412,21 +418,83 @@ a.talk-title:hover {
   color: var(--on-secondary);
 }
 
-/* Code styling */
+/* Code styling and build-time syntax highlighting */
 code, pre {
   font-family: var(--font-mono);
-  background: var(--primary-light);
-  border-radius: var(--radius-sm);
 }
 
 code {
+  background: var(--primary-light);
+  border-radius: 4px;
   padding: 0.2rem 0.4rem;
   font-size: 0.9em;
+  overflow-wrap: break-word;
 }
 
 pre {
-  padding: 1rem;
+  margin: 1.5rem 0;
+  padding: 1.25rem;
   overflow-x: auto;
+  background: var(--primary-light);
+  color: var(--foreground);
+  border: 1px solid var(--shadow-color);
+  border-radius: var(--radius-sm);
+  font-size: 0.9rem;
+  line-height: 1.65;
+  tab-size: 4;
+}
+
+pre code {
+  padding: 0;
+  background: none;
+  border-radius: 0;
+  font-size: inherit;
+  overflow-wrap: normal;
+}
+
+pre:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+
+pre .hljs-comment,
+pre .hljs-quote {
+  color: var(--code-comment);
+}
+
+pre .hljs-keyword,
+pre .hljs-operator,
+pre .hljs-literal,
+pre .hljs-meta {
+  color: var(--code-keyword);
+}
+
+pre .hljs-string,
+pre .hljs-regexp,
+pre .hljs-selector-class,
+pre .hljs-selector-id {
+  color: var(--code-string);
+}
+
+pre .hljs-title,
+pre .hljs-built_in,
+pre .hljs-type {
+  color: var(--code-function);
+}
+
+pre .hljs-number,
+pre .hljs-symbol,
+pre .hljs-bullet {
+  color: var(--code-number);
+}
+
+pre .hljs-variable,
+pre .hljs-params,
+pre .hljs-attr,
+pre .hljs-attribute,
+pre .hljs-name,
+pre .hljs-selector-tag {
+  color: var(--code-variable);
 }
 
 /* Theme Toggle Button */
@@ -462,6 +530,12 @@ pre {
   --on-secondary: #282828;
   --shadow-color: rgba(0, 0, 0, 0.4);
   --shadow-hover: rgba(0, 0, 0, 0.6);
+  --code-comment: #bdae93;
+  --code-keyword: #e49aaf;
+  --code-string: #b8bb26;
+  --code-function: #fabd2f;
+  --code-number: #fe8019;
+  --code-variable: #8db6a6;
 }
 
 [data-theme="dark"] header {
