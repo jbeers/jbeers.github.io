@@ -1,0 +1,92 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="840" viewBox="0 0 800 840" role="img" aria-labelledby="title description">
+  <title id="title">Home lab access from a phone</title>
+  <desc id="description">The phone connects to the home network through WireGuard. For terminal work, Termux connects over SSH to the laptop running Herdr, which connects over SSH to lab1 for projects, Pi, and terminal tools. For web access, the phone's browser finds service links on Homepage, hosted on the NAS, then connects to Traefik on lab1, which routes requests to application containers. Homepage discovers services but does not proxy their traffic. AdGuard provides local DNS names for devices and applications.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 Z" fill="context-stroke"/>
+    </marker>
+  </defs>
+  <style>
+    text { font-family: system-ui, -apple-system, sans-serif; fill: #14213d; }
+    .heading { font-size: 28px; font-weight: 700; }
+    .section { font-size: 20px; font-weight: 700; }
+    .label { font-size: 19px; font-weight: 700; }
+    .detail { font-size: 16px; fill: #475569; }
+    .edge-label { font-size: 15px; font-weight: 600; }
+    .card { fill: #fff; stroke: #cbd5e1; stroke-width: 1.5; }
+    .terminal { fill: none; stroke: #1d4ed8; stroke-width: 2.5; marker-end: url(#arrow); }
+    .web { fill: none; stroke: #0f766e; stroke-width: 2.5; marker-end: url(#arrow); }
+    .discovery { fill: none; stroke: #64748b; stroke-width: 2; stroke-dasharray: 6 5; marker-end: url(#arrow); }
+  </style>
+
+  <rect width="800" height="840" rx="16" fill="#f8f7f4"/>
+  <text x="36" y="52" class="heading">My home lab, from anywhere</text>
+
+  <rect x="36" y="110" width="728" height="100" rx="12" fill="#14213d"/>
+  <g text-anchor="middle" style="fill: #fff">
+    <text x="146" y="151" class="label" style="fill: #fff">Phone</text>
+    <text x="146" y="178" class="detail" style="fill: #e2e8f0">Away from home</text>
+    <text x="400" y="151" class="label" style="fill: #fff">WireGuard VPN</text>
+    <text x="400" y="178" class="detail" style="fill: #e2e8f0">Encrypted connection</text>
+    <text x="654" y="151" class="label" style="fill: #fff">Home network</text>
+    <text x="654" y="178" class="detail" style="fill: #e2e8f0">Laptop · lab1 · NAS</text>
+  </g>
+  <path d="M 236 159 H 282" fill="none" stroke="#fca311" stroke-width="2.5" marker-end="url(#arrow)"/>
+  <path d="M 518 159 H 560" fill="none" stroke="#fca311" stroke-width="2.5" marker-end="url(#arrow)"/>
+
+  <text x="36" y="263" class="section">01 / Work in the terminal</text>
+  <rect x="36" y="284" width="180" height="116" rx="12" class="card"/>
+  <rect x="310" y="284" width="180" height="116" rx="12" class="card"/>
+  <rect x="584" y="284" width="180" height="116" rx="12" class="card"/>
+  <g text-anchor="middle">
+    <text x="126" y="320" class="label">Phone</text>
+    <text x="126" y="349" class="detail">Termux</text>
+    <text x="126" y="375" class="detail">Remote terminal</text>
+    <text x="400" y="320" class="label">Laptop</text>
+    <text x="400" y="349" class="detail">Herdr</text>
+    <text x="400" y="375" class="detail">Sessions + panes</text>
+    <text x="674" y="320" class="label">lab1 · Mini-PC</text>
+    <text x="674" y="349" class="detail">Projects + Pi</text>
+    <text x="674" y="375" class="detail">Terminal tools</text>
+    <text x="263" y="329" class="edge-label">SSH</text>
+    <text x="537" y="329" class="edge-label">SSH</text>
+  </g>
+  <path d="M 216 346 H 308" class="terminal"/>
+  <path d="M 490 346 H 582" class="terminal"/>
+
+  <text x="36" y="459" class="section">02 / Open an app in the browser</text>
+  <rect x="36" y="480" width="180" height="116" rx="12" class="card"/>
+  <rect x="310" y="480" width="180" height="116" rx="12" class="card"/>
+  <rect x="584" y="480" width="180" height="116" rx="12" class="card"/>
+  <g text-anchor="middle">
+    <text x="126" y="516" class="label">Phone</text>
+    <text x="126" y="545" class="detail">Web browser</text>
+    <text x="126" y="571" class="detail">Open a service URL</text>
+    <text x="400" y="516" class="label">Traefik · lab1</text>
+    <text x="400" y="545" class="detail">Reverse proxy</text>
+    <text x="400" y="571" class="detail">Routes by hostname</text>
+    <text x="674" y="516" class="label">Apps · lab1</text>
+    <text x="674" y="545" class="detail">Podman containers</text>
+    <text x="674" y="571" class="detail">Compose stacks</text>
+    <text x="263" y="525" class="edge-label">HTTP(S)</text>
+    <text x="537" y="525" class="edge-label">Routes</text>
+  </g>
+  <path d="M 216 542 H 308" class="web"/>
+  <path d="M 490 542 H 582" class="web"/>
+
+  <path d="M 126 596 V 690" class="web"/>
+  <text x="142" y="656" class="edge-label">Find links</text>
+  <path d="M 674 596 V 634 H 250 V 742 H 218" class="discovery"/>
+  <text x="400" y="623" text-anchor="middle" class="edge-label">Service discovery</text>
+
+  <rect x="36" y="692" width="180" height="112" rx="12" class="card"/>
+  <g text-anchor="middle">
+    <text x="126" y="728" class="label">NAS</text>
+    <text x="126" y="757" class="detail">Homepage</text>
+    <text x="126" y="783" class="detail">Service dashboard</text>
+  </g>
+  <rect x="310" y="692" width="454" height="112" rx="12" class="card"/>
+  <text x="332" y="728" class="label">AdGuard DNS</text>
+  <text x="332" y="757" class="detail">Local names for devices and applications</text>
+  <text x="332" y="783" class="detail">lab1.home.arpa · web.my-app.lab1.home.arpa</text>
+</svg>

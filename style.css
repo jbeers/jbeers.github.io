@@ -117,7 +117,8 @@ h1 {
   font-size: 2.25rem;
   font-weight: 700;
   position: relative;
-  display: inline-block;
+  display: block;
+  width: fit-content;
 }
 
 .article-list-title {
@@ -146,7 +147,8 @@ h2 {
   margin-bottom: 1rem;
   padding-bottom: 0.5rem;
   border-bottom: 3px solid var(--secondary);
-  display: inline-block;
+  display: block;
+  width: fit-content;
 }
 
 h3 {
