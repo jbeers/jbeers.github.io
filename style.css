@@ -98,7 +98,6 @@ main:focus { outline: none; }
 .secondary-link { color: var(--ink); }
 .hero { display: grid; grid-template-columns: minmax(0, 3fr) minmax(0, 2fr); align-items: center; gap: 2rem; padding: 48px 0 54px; }
 .hero-copy { min-width: 0; }
-.intro-name { font-size: 1.1rem; margin-bottom: 1.3rem; }
 .hero h1 { max-width: 16ch; font-size: clamp(2.7rem, 5.4vw, 5.6rem); }
 .hero .lede { max-width: 54ch; font-size: 1.2rem; }
 .hero-art { width: 100%; }
