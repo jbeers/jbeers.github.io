@@ -4,6 +4,7 @@ title: "Pi Bash Alias"
 date: 2026-10-01
 description: "Create an alias for Pi to easily execute one-off agent commands from the CLI"
 tags: article
+selected: true
 ---
 
 Like many other software developers I've been using coding agents extensively. My current favorite (by a long shot) is Pi. In all of the agents I've used (as well as other similar apps) they give developers the ability to drop into running a shell command by prefixing it with an exclamation point. It usually looks something like `!code ./`. That command would open VSCode in the current directory.
@@ -25,7 +26,7 @@ I was becoming a dreaded meat-proxy. So I had an idea. What if I made a reverse 
 Check it out! I've aliased the command with `@`.
 
 <figure class="article-figure">
-  <video src="/images/pi-at-demo.mp4" alt="Demo of Pi with @ alias" muted autoplay loop controls style="width:80%;">
+  <video src="/images/pi-at-demo.mp4" aria-label="Demo of Pi with the at-sign alias" muted loop controls playsinline style="width:100%;">Your browser does not support this video. <a href="/images/pi-at-demo.mp4">Download the demonstration.</a></video>
 </figure>
 
 The part I'm really excited about is that I made `cerebras/qwen-3.8-27b` the default model. That model runs at over 1k tok/sec. It is blazing fast. In my testing it was an order of magnitude faster than models from OpenAI. This made it feel really snappy on the CLI.

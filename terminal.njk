@@ -1,28 +1,22 @@
 ---
-title: "Home"
+title: Terminal
 layout: base
 ---
-
-<h1>Take this, it's not safe to go alone.</h1>
-<div>
-  <h2>PowerShell</h2>  <div style="position: relative;">
-    {% highlight "powershell" %}Invoke-RestMethod "https://jbeers.github.io/res/my_terminal_config.ps1" | Invoke-Expression{% endhighlight %}
-    <button 
-      style="position: absolute; top: 8px; right: 8px; background: var(--secondary); border: 1px solid var(--surface); border-radius: 4px; padding: 4px 8px; cursor: pointer; font-size: 12px;"
-      onclick="navigator.clipboard.writeText('Invoke-RestMethod &quot;https://jbeers.github.io/res/my_terminal_config.ps1&quot; | Invoke-Expression')"
-      title="Copy to clipboard">
-      📋
-    </button>
-  </div>
-</div>
-<div>
-  <h2>Bash</h2>  <div style="position: relative;">
-    {% highlight "bash" %}source <(curl -sSL "https://github.com/jbeers/jtb-env/blob/main/shell-scripts/.bashrc?raw=true"){% endhighlight %}
-    <button 
-      style="position: absolute; top: 8px; right: 8px; background: var(--secondary); border: 1px solid var(--surface); border-radius: 4px; padding: 4px 8px; cursor: pointer; font-size: 12px;"
-      onclick="navigator.clipboard.writeText('source &lt;(curl -sSL &quot;https://github.com/jbeers/jtb-env/blob/main/shell-scripts/.bashrc?raw=true&quot;)')"
-      title="Copy to clipboard">
-      📋
-    </button>
-  </div>
-</div>
+<header class="page-intro">
+  <p class="eyebrow">Tools / Terminal</p>
+  <h1>Take this, it's not safe to go alone.</h1>
+  <p class="lede">My shell setup, ready to take with you.</p>
+  <p>These commands download and execute configuration scripts. Review the source before running them.</p>
+</header>
+<section class="page-section" aria-labelledby="powershell-title">
+  <h2 id="powershell-title">PowerShell</h2>
+  {% highlight "powershell" %}Invoke-RestMethod "https://jbeers.github.io/res/my_terminal_config.ps1" | Invoke-Expression{% endhighlight %}
+  <button type="button" onclick="navigator.clipboard.writeText('Invoke-RestMethod &quot;https://jbeers.github.io/res/my_terminal_config.ps1&quot; | Invoke-Expression')" aria-label="Copy PowerShell command">Copy command</button>
+  <a class="resource-link" href="{{ '/res/my_terminal_config.ps1' | url }}">Review the PowerShell source</a>
+</section>
+<section class="page-section" aria-labelledby="bash-title">
+  <h2 id="bash-title">Bash</h2>
+  {% highlight "bash" %}source <(curl -sSL "https://github.com/jbeers/jtb-env/blob/main/shell-scripts/.bashrc?raw=true"){% endhighlight %}
+  <button type="button" onclick="navigator.clipboard.writeText('source &lt;(curl -sSL &quot;https://github.com/jbeers/jtb-env/blob/main/shell-scripts/.bashrc?raw=true&quot;)')" aria-label="Copy Bash command">Copy command</button>
+  <a class="resource-link" href="https://github.com/jbeers/jtb-env/blob/main/shell-scripts/.bashrc">Review the Bash source</a>
+</section>

@@ -4,6 +4,7 @@ title: "Herdr 8 Bit Audio Plugin"
 date: 2026-09-30
 description: "Introducing a plugin for Herdr that adds Gauntlet like announcements to Herdr"
 tags: article
+selected: true
 ---
 
 I started using [Herdr](https://herdr.dev/) this past week and I love it. It immediately solved several problems that I had.

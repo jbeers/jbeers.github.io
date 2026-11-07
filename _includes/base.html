@@ -1,52 +1,39 @@
----
-// 11ty layout for articles
----
 <!DOCTYPE html>
-<html lang="en" x-data="{ theme: localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') }" x-init="$watch('theme', value => localStorage.setItem('theme', value))" :data-theme="theme">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{{ title }} | Jacob's Site</title>
-  <link rel="stylesheet" href="/style.css">
-  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <title>{{ title | escape }} | Jacob Beers</title>
+  <meta name="description" content="{{ description | default: 'Software engineer, technical leader, and conference speaker. Languages, developer tools, and software in production.' | escape }}">
+  <script src="{{ '/theme.js' | url }}"></script>
+  <link rel="preload" href="{{ '/res/fonts/fraunces-700.ttf' | url }}" as="font" type="font/ttf" crossorigin>
+  <link rel="stylesheet" href="{{ '/style.css' | url }}">
+  {% if interactive %}<script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>{% endif %}
 </head>
 <body>
-	<div style="margin: 0 auto; max-width: 850px">
-  <header style="display: flex; justify-content: space-between; align-items: center; gap: 1rem; flex-wrap: wrap;">
-    <span>{{ title }}</span>
-    <span class="header-links" style="display: flex; gap: 0.5rem;">
-      <a href="/">Home</a>
-      <a href="/about">About</a>
-      <a href="/article">Articles</a>
-    </span>
-    <button @click="theme = theme === 'dark' ? 'light' : 'dark'" class="theme-toggle" :aria-label="theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'">
-      <svg x-show="theme === 'light'" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
-      <svg x-show="theme === 'dark'" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
-    </button>
-  </header>
-  {% if page.url == '/' %}
-  <div class="main-with-sidebar">
-    <main>
-      {{ content }}
-    </main>
-    <aside class="sidebar">
-      <div class="sidebar-content">
-        <h3>Quick Links</h3>
-        <ul>
-          <li><a href="/cheat">Cheat Sheet</a></li>
-          <li><a href="/terminal">Terminal</a></li>
-        </ul>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <div class="site-shell">
+    <header class="site-header">
+      <a class="wordmark" href="{{ '/' | url }}">Jacob Beers</a>
+      <nav aria-label="Main navigation">
+        <a href="{{ '/' | url }}"{% if page.url == '/' %} aria-current="page"{% endif %}>Home</a>
+        <a href="{{ '/article/' | url }}"{% if page.url contains '/article/' %} aria-current="page"{% endif %}>Articles</a>
+        <a href="{{ '/talks/' | url }}"{% if page.url contains '/talks/' %} aria-current="page"{% endif %}>Talks</a>
+        <a href="{{ '/about/' | url }}"{% if page.url == '/about/' %} aria-current="page"{% endif %}>About</a>
+      </nav>
+      <button class="theme-toggle" type="button" hidden>Switch theme</button>
+    </header>
+    <main id="main-content" tabindex="-1">{{ content }}</main>
+    <footer class="site-footer">
+      <div><a class="wordmark" href="{{ '/' | url }}">Jacob Beers</a><p>Software, systems, and things worth sharing.</p></div>
+      <div class="footer-links">
+        <a href="mailto:jacobtbeers@gmail.com">Get in touch <span aria-hidden="true">↗</span></a>
+        <a href="https://github.com/jbeers">GitHub</a>
+        <a href="{{ '/cheat/' | url }}">Cheat sheet</a>
+        <a href="{{ '/terminal/' | url }}">Terminal</a>
       </div>
-    </aside>
+    </footer>
   </div>
-  {% else %}
-  <main>
-    {{ content }}
-  </main>
-  {% endif %}
-  <footer>
-    &copy; 2025 Jacob | Built with HTML, CSS & Alpine.js
-  </footer>
-	</div>
 </body>
 </html>

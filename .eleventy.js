@@ -10,6 +10,7 @@ function highlight(content, language = "plaintext") {
 module.exports = function(eleventyConfig) {
   eleventyConfig.amendLibrary("md", md => md.set({ highlight }));
   eleventyConfig.addPairedShortcode("highlight", highlight);
+  eleventyConfig.addFilter("articleContent", require("./lib/article-content.cjs"));
 
   // Copy style.css to the output folder
   eleventyConfig.addPassthroughCopy("style.css");
@@ -19,6 +20,7 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("res");
   eleventyConfig.addPassthroughCopy("pico-8");
   eleventyConfig.addPassthroughCopy("cheat.js");
+  eleventyConfig.addPassthroughCopy("theme.js");
 
   // Add a collection for articles using the 'article' tag
   eleventyConfig.addCollection("article", function(collectionApi) {
@@ -28,9 +30,9 @@ module.exports = function(eleventyConfig) {
   // Add a simple Nunjucks date filter
   eleventyConfig.addFilter("date", function(dateObj, format) {
     const pad = n => n < 10 ? '0' + n : n;
-    const year = dateObj.getFullYear();
-    const month = pad(dateObj.getMonth() + 1);
-    const day = pad(dateObj.getDate());
+    const year = dateObj.getUTCFullYear();
+    const month = pad(dateObj.getUTCMonth() + 1);
+    const day = pad(dateObj.getUTCDate());
     if (format === "yyyy-MM-dd") {
       return `${year}-${month}-${day}`;
     }

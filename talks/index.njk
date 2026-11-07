@@ -1,0 +1,55 @@
+---
+title: Talks
+layout: base
+description: "Conference talks by Jacob Beers on language runtimes, developer tooling, testing, data visualization, and production systems."
+---
+<header class="page-intro illustrated-intro">
+  <div class="intro-copy">
+  <p class="eyebrow">Talks &amp; conferences</p>
+  <h1>Technical depth.<br>Practical ideas.</h1>
+  <p class="lede">I build runtimes, developer tools, and production systems—and speak about the engineering behind them.</p>
+  <a class="text-link" href="mailto:jacobtbeers@gmail.com?subject=Conference%20speaking">Invite me to speak <span aria-hidden="true">↗</span></a>
+  </div>
+  <img class="editorial-art intro-art" src="{{ '/images/editorial-orbit.webp' | url }}" alt="" width="1254" height="1254">
+</header>
+
+<section class="page-section" aria-labelledby="featured-title">
+  <p class="eyebrow">01 / Featured talks</p>
+  <h2 id="featured-title" class="section-title">From the stage.</h2>
+  <div class="featured-talks">
+    {% for talk in talks %}
+    {% if loop.index <= 2 %}
+    <article class="featured-talk">
+      <p class="eyebrow">{{ talk.venue }} {{ talk.year }}</p>
+      <h3>{{ talk.title }}</h3>
+      <a class="resource-link" href="{{ talk.url }}">Session details <span aria-hidden="true">↗</span></a>
+    </article>
+    {% endif %}
+    {% endfor %}
+  </div>
+</section>
+
+<section class="page-section" aria-labelledby="appearances-title">
+  <p class="eyebrow">02 / Selected appearances</p>
+  <h2 id="appearances-title">A few things I've shared.</h2>
+  <ul class="appearance-list">
+    {% for talk in talks %}
+    {% if loop.index > 2 %}
+    <li>
+      <p class="eyebrow appearance-venue">{{ talk.venue }} <span class="appearance-year">{{ talk.year }}</span></p>
+      <div><h3>{{ talk.title }}</h3>
+        {% if talk.url %}
+        <a class="resource-link" href="{% if talk.url[0] == '/' %}{{ talk.url | url }}{% else %}{{ talk.url }}{% endif %}">{% if talk.url == '/talks/git-tips/' %}Slides &amp; resources{% else %}Session details{% endif %} <span aria-hidden="true">→</span></a>
+        {% endif %}
+      </div>
+    </li>
+    {% endif %}
+    {% endfor %}
+  </ul>
+</section>
+
+<section class="contact-section" aria-labelledby="organizer-title">
+  <h2 id="organizer-title">Bring real engineering experience to your stage.</h2>
+  <p>Get in touch to discuss a talk for your conference or event.</p>
+  <a class="text-link email-link" href="mailto:jacobtbeers@gmail.com?subject=Conference%20speaking">jacobtbeers@gmail.com <span aria-hidden="true">↗</span></a>
+</section>

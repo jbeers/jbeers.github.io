@@ -1,13 +1,16 @@
 ---
 title: "Shortcuts Cheat Sheet"
 layout: base
+interactive: true
 ---
+<header class="page-intro"><p class="eyebrow">Tools / Reference</p><h1>Shortcuts, close at hand.</h1><p class="lede">A cheat sheet for the tools I use every day.</p></header>
 
 <div x-data="cheatSheet">
 
     <div class="search-container">
         <input 
-            type="text" 
+            type="search"
+            aria-label="Search shortcuts"
             x-model="search" 
             placeholder="Search shortcuts... (e.g., 'save', 'window', 'tmux')"
             class="search-input"
@@ -55,4 +58,4 @@ layout: base
 
 </div>
 
-<script src="/cheat.js"></script>
+<script src="{{ '/cheat.js' | url }}"></script>

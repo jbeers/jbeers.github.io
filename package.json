@@ -4,9 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "node --test scripts/check-site.cjs scripts/article-content.test.cjs scripts/theme.test.cjs",
     "dev": "npx @11ty/eleventy --serve",
-    "build-ghpages": "npx @11ty/eleventy --pathprefix=/jbeers.github.io/",
+    "build-ghpages": "npx @11ty/eleventy --pathprefix=/",
     "fetch-external-projects": "node scripts/fetch-external-projects.mjs"
   },
   "author": "",

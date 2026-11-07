@@ -1,0 +1,29 @@
+[
+  {
+    "title": "USRA Multi-Messenger",
+    "category": "Client work / Research computing",
+    "description": "Aggregating and warehousing scientific data from multiple observatories. I helped build the prototype that secured a NASA-sponsored grant and am now building the implementation for the National Research Platform—Kubernetes-based research computing hosted by U.S. universities.",
+    "image": "/images/editorial-multimessenger.webp",
+    "imageWidth": 1484,
+    "imageHeight": 1060,
+    "imageAlt": "Three observatories feed a shared scientific data warehouse."
+  },
+  {
+    "title": "MatchBox",
+    "category": "Language runtimes / Rust",
+    "description": "Sole author and developer of a Rust virtual machine bringing WebAssembly and ESP32 runtime support to the BoxLang ecosystem.",
+    "image": "/images/editorial-matchbox.webp",
+    "imageWidth": 1774,
+    "imageHeight": 887,
+    "imageAlt": "MatchBox, a Rust VM, supports WebAssembly and ESP32 runtime targets."
+  },
+  {
+    "title": "BoxLang developer tools",
+    "category": "Developer experience",
+    "description": "Core BoxLang contributor and primary developer of its language server, debugger, and IDE tooling.",
+    "image": "/images/editorial-developer-tools.webp",
+    "imageWidth": 1774,
+    "imageHeight": 887,
+    "imageAlt": "An abstract editor shows a breakpoint and debugging controls."
+  }
+]

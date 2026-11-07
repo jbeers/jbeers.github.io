@@ -4,6 +4,9 @@ title: "Home Network Setup"
 date: 2026-10-26
 description: "How my home lab connects my laptop, NAS, mini-PC, and phone into a remotely accessible development environment."
 tags: article
+featured: true
+selected: true
+cover: /images/home-network-setup.svg
 ---
 
 When I leave my desk, my development environment doesn't have to stay behind. I can open my phone, test an app running at home, and ask my coding agent to make a change—all using the same terminal tools I use on my laptop, without a remote desktop.

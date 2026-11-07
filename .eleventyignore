@@ -1,0 +1,5 @@
+# Agent instructions and design-review artifacts are not published site pages.
+.agents/
+AGENTS.md
+STYLE.md
+design/

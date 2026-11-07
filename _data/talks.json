@@ -1,0 +1,80 @@
+[
+  {
+    "title": "Giving Agents a Memory: Vector Search with PostgreSQL",
+    "venue": "CFCamp",
+    "year": 2026,
+    "url": "https://www.cfcamp.org/sessions/vector-search-with-postgresql.html"
+  },
+  {
+    "title": "Breaking the DOM Limit: High-Performance Data Visualization with D3 and Three.js",
+    "venue": "KCDC",
+    "year": 2026,
+    "url": "https://www.kcdc.info/sessions#:~:text=Jacob%20Beers,Vue%20or%20React."
+  },
+  {
+    "title": "MatchBox! BoxLang WASM, Embedded and more!",
+    "venue": "Into The Box",
+    "year": 2026,
+    "url": "https://www.intothebox.org/into-the-box/sessions/detail?slug=sessions/matchbox-boxlang-wasm-embedded-and-more"
+  },
+  {
+    "title": "End-to-End Testing with TestBox and Playwright (co-speaker)",
+    "venue": "Into The Box",
+    "year": 2026,
+    "url": "https://www.intothebox.org/into-the-box/sessions/detail?slug=sessions/end-to-end-testing-with-testbox-and-playwright"
+  },
+  {
+    "title": "Agentic Coding Made Easy with BoxLang and VSCode",
+    "venue": "Into The Box",
+    "year": 2026,
+    "url": "https://www.intothebox.org/into-the-box/sessions/detail?slug=sessions/agentic-coding-made-easy-with-boxlang-and-vscode"
+  },
+  {
+    "title": "BoxLang vs the World: From zero to stable in 20 months (co-speaker)",
+    "venue": "DevNexus",
+    "year": 2026,
+    "url": "https://devnexus.com/events/boxlang-vs-the-world-from-zero-to-stable-in-20-months"
+  },
+  {
+    "title": "Git Smarter: 20 Git Tips",
+    "venue": "CF Summit",
+    "year": 2025,
+    "url": "/talks/git-tips/"
+  },
+  {
+    "title": "BoxLang IDE",
+    "venue": "Into The Box",
+    "year": 2025,
+    "url": null
+  },
+  {
+    "title": "Using cbSSO in a ColdBox App",
+    "venue": "Into The Box",
+    "year": 2025,
+    "url": null
+  },
+  {
+    "title": "Docker, CI/CD, and AWS ECS",
+    "venue": "Into The Box",
+    "year": 2025,
+    "url": null
+  },
+  {
+    "title": "Summary of \"Out of the Tar Pit\"",
+    "venue": "CF Summit",
+    "year": 2024,
+    "url": null
+  },
+  {
+    "title": "Durable Code Principles",
+    "venue": "Into The Box",
+    "year": 2024,
+    "url": null
+  },
+  {
+    "title": "BoxLang Developer Tooling",
+    "venue": "Into The Box",
+    "year": 2024,
+    "url": null
+  }
+]
