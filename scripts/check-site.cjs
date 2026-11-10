@@ -57,6 +57,18 @@ test('home leads with speaking and gives client work real prominence', () => {
   assert.ok(html.includes('href="/talks/"'));
 });
 
+test('home writing automatically lists the three newest articles', () => {
+  const section = elements(pageAt('/'), node => node.name === 'section' && node.attribs['aria-labelledby'] === 'writing-title')[0];
+  const list = DomUtils.findOne(node => node.name === 'ul' && node.attribs.class === 'link-list', section.children);
+  const actual = DomUtils.findAll(node => node.name === 'a', list.children).map(node => node.attribs.href);
+  const newest = pages
+    .filter(page => page.url.startsWith('/article/') && page.url !== '/article/')
+    .map(page => ({ url: page.url, date: tags(page.content, 'time')[0].attribs.datetime }))
+    .sort((a, b) => b.date.localeCompare(a.date))
+    .slice(0, 3);
+  assert.deepEqual(actual, newest.map(page => page.url));
+});
+
 test('approved editorial artwork is integrated as real responsive images', () => {
   const home = pageAt('/');
   const hero = elements(home, node => node.name === 'section' && node.attribs.class === 'hero')[0];

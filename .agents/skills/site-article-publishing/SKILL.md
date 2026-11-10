@@ -87,7 +87,7 @@ tags: article
 ---
 ```
 
-The date placeholder must be replaced with the intended publication date, not inferred from an old note or file modification time. Inspect existing slug conventions before choosing `article/<slug>.md`. Do not set `featured: true` or `selected: true` without permission; those change homepage/archive curation. Do not remove or replace the current featured article by accident.
+The date placeholder must be replaced with the intended publication date, not inferred from an old note or file modification time. Inspect existing slug conventions before choosing `article/<slug>.md`. Do not set `featured: true` without permission; it changes the archive's featured article. Homepage Writing automatically shows the three newest articles by publication date; no `selected` flag is needed. Do not remove or replace the current featured article by accident.
 
 ## 7. Verify and hand off; publication is a separate gate
 

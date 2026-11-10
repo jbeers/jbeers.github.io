@@ -48,7 +48,7 @@ For production briefs, generation, image review, and handoff, read [the image gu
 
 ## Layout and hierarchy
 
-- **Home:** introduction and clear talk/work links; speaking; selected engineering work with USRA visibly represented alongside MatchBox and BoxLang tooling; curated writing; contact.
+- **Home:** introduction and clear talk/work links; speaking; selected engineering work with USRA visibly represented alongside MatchBox and BoxLang tooling; latest writing; contact.
 - **Articles index:** one clear feature, then varied illustrations and scannable text-led listings. Do not force every post into an identical card.
 - **Article detail:** comfortable reading column (roughly 60–70 characters on desktop), clear headings, code blocks, figures/captions, and related content. Body sections should not suddenly expand to full desktop width.
 - **About / Work with me:** explain the breadth through concrete work, including cloud/on-prem deployments, Kubernetes, and team leadership. Make speaking, employment, and consulting contact paths obvious without a skills inventory.

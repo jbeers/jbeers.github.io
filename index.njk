@@ -50,7 +50,7 @@ description: "Jacob Beers builds software, from runtimes to production. Conferen
   </div>
   <ul class="link-list">
     {% for post in collections.article | reverse %}
-    {% if post.data.selected %}
+    {% if loop.index <= 3 %}
     <li><a href="{{ post.url | url }}">{{ post.data.title }} <span aria-hidden="true">→</span></a></li>
     {% endif %}
     {% endfor %}
