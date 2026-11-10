@@ -1,0 +1,10 @@
+Use case: stylized-concept
+Asset type: panoramic 5:2 editorial cover for an X/Twitter article about a home network setup
+Primary request: a polished illustration of a private home development environment that remains at home while its owner accesses that same environment from an unfolded book-style smartphone anywhere
+Scene/backdrop: a compact, inviting home-lab desk vignette against a quiet architectural backdrop; the phone is visually separate from the home equipment, connected by a few subtle luminous paths that imply a private encrypted remote connection
+Subject: one open laptop, one small NAS, one mini-PC, and one unfolded book-style smartphone. The smartphone has a single continuous inner display with a visible center fold, not two separate phones. The laptop and phone displays suggest matching terminal panes through abstract short lines and blocks, with no legible characters
+Style/medium: sophisticated dimensional editorial illustration with clean architectural forms, convincing hardware silhouettes, tactile matte surfaces, and a restrained handmade painterly finish; polished but not stock clip art
+Composition/framing: very wide 5:2 panoramic composition intended for a 2000x800 cover. The four devices are large and immediately recognizable at thumbnail size. Keep all devices and their important edges within the central 80% width and central 75% height, leaving generous breathing room for a safe crop. Make the quiet connection visually legible without turning it into a wiring diagram
+Lighting/mood: inviting, capable, quietly futuristic; soft warm desk illumination contrasts with cool terminal-screen light; restrained atmospheric depth
+Color palette: warm neutral desk and architectural tones, deep ink hardware, restrained blue-green screen and connection glow
+Constraints: no title, words, labels, readable commands, letterforms, numbers, invented logos, watermarks, people, hands, unrelated props, rack-sized data center, literal network diagram, chaotic cyberpunk, or excessive neon

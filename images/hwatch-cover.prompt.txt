@@ -1,0 +1,13 @@
+Use case: stylized-concept.
+Asset type: article cover, concept 'One command, many routes'.
+Reference image 1 editorial-style-reference.png: STYLE ONLY, the approved bold editorial website. Reference image 2 print-texture-reference.png: STYLE ONLY, the fine ink, stipple, opaque ivory fills, restrained vermilion and proportions of existing production artwork. Do not recreate page text, a screenshot or an existing illustration.
+Primary request: a bold, clear editorial-scientific print illustration of one familiar SSH terminal connecting along three distinct vermilion transport paths to three remote-compute forms. One substantial abstract terminal window at left with just the command 'ssh' as its only text. Three elegant curved connecting paths at right lead to: a virtual-machine cube/device, a container-like outlined module, and a remote server/tower. Fine arrowheads indicate the connection routes. The illustration communicates consistent SSH access across different transports, NOT hwatch automatically discovering all these target types.
+Style: fine near-black ink outlines, restrained engraved/stippled texture inside solid subject shapes, warm ivory highlights, vermilion accents, elegant spatial composition and generous negative space. Not glossy 3D, not teal icons or neon SaaS art. Large recognizable objects, no tiny technical clutter.
+Palette: ivory #F6F3EB, ink #18211E, vermilion #CF472A. Genuinely transparent background with alpha, no opaque paper rectangle, fake checkerboard, background vignette or texture across empty canvas. Ivory fills inside the terminal and device shapes are welcome.
+Composition: landscape 16:9, about 1536x864. Intended display 640px desktop / 340px mobile; keep all subjects and paths inside 7% crop-safe margins. No text other than 'ssh', no logos, private hostnames, credentials, locks/shields, fake UI screenshots, or claims of authenticated/secure/bypassed connections. Decorative metaphor, not an exact architecture diagram.
+
+HANDOFF NOTES
+Source: subscription-backed Codex native image tool; one generation for this original, no retries. No new generation for local integration.
+Execution-only worker instructions omitted; visual brief above is unchanged.
+Style references: design/mockups/bold-editorial/about-v2.png; design/artwork/editorial-developer-tools.png.
+Original: design/artwork/hwatch-cover.png (1672x941). Served: images/hwatch-cover.webp (same dimensions, quality 92, alpha retained). Multiple connection routes illustrate ProxyCommand generally, not hwatch discovery support.
