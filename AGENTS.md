@@ -12,12 +12,19 @@ Use approved About/Talks v2 and mobile v2 references linked there. Borrow field-
 - Preserve accessibility, existing routes/content, useful tools/experiments, and theme behavior unless the requested change explicitly alters them.
 - Do not begin redesign implementation or generate images merely because these instructions exist; stay within the current request.
 
+## Article preparation
+
+Use [site-article-publishing](.agents/skills/site-article-publishing/SKILL.md) when Jacob pastes an article, supplies an Obsidian draft, or asks to prepare writing for release. Preserve his voice and intellectual content. Apply only unambiguous minor copyedits automatically; discuss structural, substantive, or meaning-changing edits and get approval before applying them. Give critical feedback separately from the draft.
+
+Propose 3–5 written image concepts before generation, then generate only the explicitly approved concepts/count and incorporate reviewed outputs at approved locations using the image skills below. Preparing an article does not authorize image generation or publication. Keep pending/private drafts outside deployable inputs: the existing `drafts/` directory and future publication dates do not prevent a page from being built. Get explicit authorization before committing, pushing, or deploying a release.
+
 ## Image skills
 
 Project-local skills live in `.agents/skills/`:
 
 - [site-editorial-illustration](.agents/skills/site-editorial-illustration/SKILL.md): hero artwork, article images, and expressive project illustrations.
 - [site-editorial-diagram](.agents/skills/site-editorial-diagram/SKILL.md): informative relationships, technical workflows, and project diagrams.
+- [site-x-promo-image](.agents/skills/site-x-promo-image/SKILL.md): exact 5:2 X promo/header images, with three proposed treatments (visual narrative, abstract editorial, technical clarity), optional approved hooks, and feed-size review. This is a separate generation request from inline article images; the full comparison set is three candidates total, not three per treatment. No posting to X is implied.
 
 Read the relevant skill and its [shared image guide](design/editorial-images.md) before producing images. They complement the installed `codex-imagegen` execution skill; they do not replace its subscription-backed native-tool workflow or safety constraints. Confirm requested asset counts and avoid unrequested alternatives/retries. Stop and report missing generation capability rather than switching to a billed API.
 

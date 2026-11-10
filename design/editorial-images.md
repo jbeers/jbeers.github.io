@@ -42,6 +42,10 @@ These are design proposals containing draft copy and conceptual diagrams. Their 
 - Preserve the final prompt next to the asset as `<stem>.prompt.txt`, including reference paths/roles, intended use/size, exact labels or approved flow, and review caveats. Keep credentials, private logs, internal hostnames, and NDA content out of the repository.
 - Report the final asset/prompt paths, native generation source, what was checked, and remaining limitations. Generation does not authorize publication or edits to templates.
 
+## Social promo exception
+
+For X headers/promos, use [site-x-promo-image](../.agents/skills/site-x-promo-image/SKILL.md). Keep the same editorial identity, but compose for the chosen 5:2 format and realistic feed size. Unlike ordinary site illustrations, a social image may contain a short, explicitly approved text hook; prefer typesetting it over genuine generated artwork. Favor full, complete compositions with an integrated headline pocket rather than a rigid blank-half layout. Planned overscan can offer crop flexibility, but must preserve meaningful forms and must not be confused with higher resolution; the promo skill records the specific checks. This does not authorize baked-in article paragraphs, extra generations, or posting to X. Site headings and body copy remain live HTML.
+
 ## Accessibility at integration time
 
 Keep site headlines, copy, navigation, and important labels as HTML, not generated lettering. Decorative images get empty alt text. Informative images get concise purpose-oriented alt text; diagrams also need a nearby textual explanation of the relationships. Preserve captions and a full-size link for diagrams with fine detail. Specify intrinsic image dimensions and responsive sizing without stretching or hiding essential content in a crop. Validate actual readability, contrast, overflow, and layout in the browser; a raster mockup is not accessibility evidence.
